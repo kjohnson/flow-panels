@@ -8,28 +8,43 @@ import {
 } from "react-router-dom";
 import Navigation from "./components/Navigation"
 import Panel from "./components/Panel"
+import Hyperlink from "./components/Hyperlink"
 
-const routes = [
+const resources = [
   {
-    path: "/documents",
-    component: DocumentsPanel,
+    id: 'documents',
+    component: DocumentsPanel
   },
   {
-    path: "/teams",
-    component: TeamsPanel,
+    id: 'teams',
+    component: TeamsPanel
   },
+  {
+    id: 'issues',
+    component: IssuesPanel
+  }
 ]
 
-const nestedRoutes = [
-  {
-    path: "/documents/teams",
-    component: TeamsPanel,
-  },
-  {
-    path: "/teams/documents",
-    component: DocumentsPanel,
-  },
-]
+const routes = resources.map(( resource ) => {
+  return {
+    path: "/" + resource.id,
+    component: resource.component,
+  }
+});
+
+const nestedRoutes = resources.map(( resource ) => {
+  return resources.filter(( nestedResource ) => {
+    return resource.id !== nestedResource.id
+  }).map(( nestedResource ) => {
+    return {
+      path: "/" + resource.id + "/" + nestedResource.id,
+      component: nestedResource.component
+    }
+  })
+}).flat()
+
+console.log( routes )
+console.log( nestedRoutes )
 
 export default function App() {
   return (
@@ -60,7 +75,14 @@ export default function App() {
 function DocumentsPanel() {
   return (
     <Panel title="DOCUMENTS">
-      <Link to="/documents/teams">Teams</Link>
+      <ul className="list-disc">
+        <li>
+          <Hyperlink to="/documents/teams">Teams</Hyperlink>
+        </li>
+        <li>
+          <Hyperlink to="/documents/issues">Issues</Hyperlink>
+        </li>
+      </ul>
     </Panel>
   )
 }
@@ -68,7 +90,29 @@ function DocumentsPanel() {
 function TeamsPanel() {
   return (
     <Panel title="Teams">
-      <Link to="/teams/documents">Documents</Link>
+      <ul className="list-disc">
+        <li>
+          <Hyperlink to="/teams/documents">Documents</Hyperlink>
+        </li>
+        <li>
+          <Hyperlink to="/teams/issues">Issues</Hyperlink>
+        </li>
+      </ul>
+    </Panel>
+  )
+}
+
+function IssuesPanel() {
+  return (
+    <Panel title="Issues">
+      <ul className="list-disc">
+        <li>
+          <Hyperlink to="/issues/documents">Documents</Hyperlink>
+        </li>
+        <li>
+          <Hyperlink to="/issues/teams">Teams</Hyperlink>
+        </li>
+      </ul>
     </Panel>
   )
 }
