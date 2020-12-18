@@ -48,7 +48,7 @@ export default function App() {
         <aside className="flex-1 m-6">
           <Switch>
             {nestedRoutes.map((route, i) => (
-              <Route key={i} path={`*${route.path}`} component={route.component} />
+              <Route key={i} path={route.path} component={route.component} />
             ))}
           </Switch>
         </aside>
