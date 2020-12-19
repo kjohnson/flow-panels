@@ -13,16 +13,16 @@ import AccountNavigation from "./components/AccountNavigation"
 
 const resources = [
   {
-    id: 'documents',
-    component: DocumentsPanel
+    id: 'document',
+    component: DocumentPanel
   },
   {
-    id: 'teams',
-    component: TeamsPanel
+    id: 'user',
+    component: UserPanel
   },
   {
-    id: 'issues',
-    component: IssuesPanel
+    id: 'issue',
+    component: IssuePanel
   }
 ]
 
@@ -79,45 +79,45 @@ export default function App() {
   );
 }
 
-function DocumentsPanel() {
+function DocumentPanel() {
   return (
-    <Panel title="DOCUMENTS">
+    <Panel title="DOCUMENT">
       <ul className="list-disc">
         <li>
-          <Hyperlink to="/documents/teams">Teams</Hyperlink>
+          <Hyperlink to="/document/user">User</Hyperlink>
         </li>
         <li>
-          <Hyperlink to="/documents/issues">Issues</Hyperlink>
+          <Hyperlink to="/document/issue">Issue</Hyperlink>
         </li>
       </ul>
     </Panel>
   )
 }
 
-function TeamsPanel() {
+function UserPanel() {
   return (
-    <Panel title="Teams">
+    <Panel title="User">
       <ul className="list-disc">
         <li>
-          <Hyperlink to="/teams/documents">Documents</Hyperlink>
+          <Hyperlink to="/user/document">Document</Hyperlink>
         </li>
         <li>
-          <Hyperlink to="/teams/issues">Issues</Hyperlink>
+          <Hyperlink to="/user/issue">Issue</Hyperlink>
         </li>
       </ul>
     </Panel>
   )
 }
 
-function IssuesPanel() {
+function IssuePanel() {
   return (
-    <Panel title="Issues">
+    <Panel title="Issue">
       <ul className="list-disc">
         <li>
-          <Hyperlink to="/issues/documents">Documents</Hyperlink>
+          <Hyperlink to="/issue/document">Document</Hyperlink>
         </li>
         <li>
-          <Hyperlink to="/issues/teams">Teams</Hyperlink>
+          <Hyperlink to="/issue/user">User</Hyperlink>
         </li>
       </ul>
     </Panel>

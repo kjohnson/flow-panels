@@ -7,8 +7,9 @@ export default function() {
     return (
         <ul>
             <Item to="/">Dashboard</Item>
-            <Item to="/documents">Documents</Item>
-            <Item to="/teams">Teams</Item>
+            <Item to="/document">Document</Item>
+            <Item to="/user">Users</Item>
+            <Item to="/issue">Issues</Item>
         </ul>
     )
 }
