@@ -10,3 +10,8 @@ body,
 {
     height: 100%;
 }
+
+main > div:nth-of-type(2) {
+    @apply bg-gray-50;
+    @apply pl-12;
+}

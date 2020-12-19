@@ -55,7 +55,7 @@ export default function App() {
           <Navigation />
           <AccountNavigation />
         </nav>
-        <main className="flex-1 m-6">
+        <main className="flex w-full">
           <Switch>
             {routes.map((route, i) => (
               <Route key={i} path={route.path} component={route.component} />
@@ -67,14 +67,13 @@ export default function App() {
               <Panel title="Dashboard"></Panel>
             </Route>
           </Switch>
-        </main>
-        <aside className="flex-1 m-6">
+
           <Switch>
             {nestedRoutes.map((route, i) => (
               <Route key={i} path={route.path} component={route.component} />
             ))}
           </Switch>
-        </aside>
+        </main>
       </div>
     </Router>
   );
