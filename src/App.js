@@ -9,6 +9,7 @@ import {
 import Navigation from "./components/Navigation"
 import Panel from "./components/Panel"
 import Hyperlink from "./components/Hyperlink"
+import AccountNavigation from "./components/AccountNavigation"
 
 const resources = [
   {
@@ -30,7 +31,7 @@ const routes = resources.map(( resource ) => {
     path: "/" + resource.id,
     component: resource.component,
   }
-});
+})
 
 const nestedRoutes = resources.map(( resource ) => {
   return resources.filter(( nestedResource ) => {
@@ -50,14 +51,21 @@ export default function App() {
   return (
     <Router>
       <div className="h-full flex">
-        <nav className="h-full w-auto p-16 mr-4 border-r-2 bg-gray-200">
+        <nav className="h-full flex flex-col justify-between w-auto p-16 mr-4 border-r-2 bg-gray-200">
           <Navigation />
+          <AccountNavigation />
         </nav>
         <main className="flex-1 m-6">
           <Switch>
             {routes.map((route, i) => (
               <Route key={i} path={route.path} component={route.component} />
             ))}
+            <Route path="/account">
+              <Panel title="Account"></Panel>
+            </Route>
+            <Route path="/">
+              <Panel title="Dashboard"></Panel>
+            </Route>
           </Switch>
         </main>
         <aside className="flex-1 m-6">
