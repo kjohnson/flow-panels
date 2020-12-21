@@ -10,6 +10,9 @@ import Navigation from "./components/Navigation"
 import Panel from "./components/Panel"
 import Hyperlink from "./components/Hyperlink"
 import AccountNavigation from "./components/AccountNavigation"
+import UserPanel from "./components/Panels/User"
+import DocumentPanel from "./components/Panels/Document"
+import IssuePanel from "./components/Panels/Issue"
 
 const resources = [
   {
@@ -77,49 +80,4 @@ export default function App() {
       </div>
     </Router>
   );
-}
-
-function DocumentPanel() {
-  return (
-    <Panel title="DOCUMENT">
-      <ul className="list-disc">
-        <li>
-          <Hyperlink to="/document/user">User</Hyperlink>
-        </li>
-        <li>
-          <Hyperlink to="/document/issue">Issue</Hyperlink>
-        </li>
-      </ul>
-    </Panel>
-  )
-}
-
-function UserPanel() {
-  return (
-    <Panel title="User">
-      <ul className="list-disc">
-        <li>
-          <Hyperlink to="/user/document">Document</Hyperlink>
-        </li>
-        <li>
-          <Hyperlink to="/user/issue">Issue</Hyperlink>
-        </li>
-      </ul>
-    </Panel>
-  )
-}
-
-function IssuePanel() {
-  return (
-    <Panel title="Issue">
-      <ul className="list-disc">
-        <li>
-          <Hyperlink to="/issue/document">Document</Hyperlink>
-        </li>
-        <li>
-          <Hyperlink to="/issue/user">User</Hyperlink>
-        </li>
-      </ul>
-    </Panel>
-  )
 }
