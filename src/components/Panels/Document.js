@@ -5,7 +5,7 @@ import Hyperlink from "../Hyperlink"
 
 export default function Document() {
     return (
-        <Panel title="Document">
+        <>
             <h3>Subject Matter Export</h3>
             <div className="mt-4">
                 <Hyperlink to="/document/user">Victoria</Hyperlink>
@@ -23,6 +23,6 @@ export default function Document() {
                     <Hyperlink to="/document/issue">Typo is second to last paragraph.</Hyperlink>
                 </li>
             </ul>
-        </Panel>
+        </>
     )
 }

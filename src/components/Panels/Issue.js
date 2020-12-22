@@ -4,7 +4,7 @@ import Hyperlink from "../Hyperlink"
 
 export default function Issue() {
     return (
-        <Panel title="Issue">
+        <>
             <h3 className="mt-8">Assigned User</h3>
             <Hyperlink to="/issue/user">Victoria</Hyperlink>
 
@@ -14,6 +14,6 @@ export default function Issue() {
             <h3 className="mt-8">Related Document</h3>
 
             <Hyperlink to="/issue/document">Intro Document</Hyperlink>
-        </Panel>
+        </>
     )
 }

@@ -14,22 +14,26 @@ import IssuePanel from "./components/Panels/Issue"
 const resources = [
   {
     id: 'document',
+    title: 'Document',
     component: DocumentPanel
   },
   {
     id: 'user',
+    title: 'User',
     component: UserPanel
   },
   {
     id: 'issue',
+    title: 'Issue',
     component: IssuePanel
   }
 ]
 
 const routes = resources.map(( resource ) => {
+  const { id, title, component: Component } = resource
   return {
-    path: "/" + resource.id,
-    component: resource.component,
+    path: "/" + id,
+    component: () => <Panel title={title}><Component /></Panel>
   }
 })
 
@@ -37,9 +41,10 @@ const nestedRoutes = resources.map(( resource ) => {
   return resources.filter(( nestedResource ) => {
     return resource.id !== nestedResource.id
   }).map(( nestedResource ) => {
+    const { title, component: NestedComponent } = nestedResource;
     return {
       path: "/" + resource.id + "/" + nestedResource.id,
-      component: nestedResource.component
+      component: () => <Panel title={title} back={resource.id}><NestedComponent /></Panel>
     }
   })
 }).flat()
