@@ -8,7 +8,7 @@ export default function Document() {
         <Panel title="Document">
             <h3>Subject Matter Export</h3>
             <div className="mt-4">
-                <Hyperlink to="/document/user">Victoria Steele</Hyperlink>
+                <Hyperlink to="/document/user">Victoria</Hyperlink>
             </div>
 
             <h3 className="mt-8">Content</h3>

@@ -12,7 +12,7 @@ export default function User() {
                 </div>
                 <dl>
                     <dt><strong>Name</strong></dt>
-                    <dd>Victoria Steele</dd>
+                    <dd>Victoria</dd>
                     <dt><strong>Department</strong></dt>
                     <dd>Marketing</dd>
                 </dl>

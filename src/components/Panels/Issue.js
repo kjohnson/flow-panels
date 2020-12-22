@@ -6,7 +6,7 @@ export default function Issue() {
     return (
         <Panel title="Issue">
             <h3 className="mt-8">Assigned User</h3>
-            <Hyperlink to="/issue/user">Victoria Steele</Hyperlink>
+            <Hyperlink to="/issue/user">Victoria</Hyperlink>
 
             <h3 className="mt-8">Description</h3>
             <p>Typo is second to last paragraph.</p>
