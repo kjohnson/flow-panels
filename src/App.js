@@ -3,12 +3,9 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
-  useRouteMatch,
 } from "react-router-dom";
 import Navigation from "./components/Navigation"
 import Panel from "./components/Panel"
-import Hyperlink from "./components/Hyperlink"
 import AccountNavigation from "./components/AccountNavigation"
 import UserPanel from "./components/Panels/User"
 import DocumentPanel from "./components/Panels/Document"
