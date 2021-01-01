@@ -3,7 +3,7 @@ import {
   Link,
 } from "react-router-dom";
 
-export default function() {
+export default function Navigation() {
     return (
         <ul>
             <Item to="/">Dashboard</Item>
