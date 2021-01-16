@@ -9,6 +9,7 @@ import Panel from "./components/Panel"
 import AccountNavigation from "./components/AccountNavigation"
 import UserPanel from "./components/Panels/User"
 import DocumentPanel from "./components/Panels/Document"
+import DocumentEditPanel from "./components/Panels/DocumentEdit"
 import IssuePanel from "./components/Panels/Issue"
 
 const resources = [
@@ -47,7 +48,12 @@ const nestedRoutes = resources.map(( resource ) => {
       component: () => <Panel title={title} back={resource.id}><NestedComponent /></Panel>
     }
   })
-}).flat()
+}).flat().concat([
+  {
+    path: "/document/edit",
+    component: () => <Panel title={"Content"} back={'document'}><DocumentEditPanel /></Panel>
+  }
+])
 
 console.log( routes )
 console.log( nestedRoutes )
