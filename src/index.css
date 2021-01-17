@@ -15,3 +15,22 @@ main > div:nth-of-type(2) {
     @apply bg-gray-50;
     @apply pl-12;
 }
+
+.codex-editor h1 {
+    @apply text-4xl
+}
+.codex-editor h2 {
+    @apply text-3xl
+}
+.codex-editor h3 {
+    @apply text-2xl
+}
+.codex-editor h4 {
+    @apply text-xl
+}
+.codex-editor h5 {
+    @apply text-lg
+}
+.codex-editor h6 {
+    @apply text-lg
+}
