@@ -8,20 +8,37 @@ export default function Document() {
         header: Header,
     }
 
+    const i18n = {
+        messages: {
+            ui: {
+                blockTunes: {
+                    toggler: {
+                        "Click to tune": "Block Settings",
+                    }
+                }
+            }
+        }
+    }
+
     return (
         <>
-            <div className="w-full h-96 p-8 border border-gray-400 rounded">
-                <EditorJs tools={tools} data={{
-                    blocks: [
-                        {
-                            type: "paragraph",
-                            data: {
-                                text: "Doloribus vitae sit eligendi. Magnam eos totam animi optio doloribus. Et impedit pariatur aut voluptatem cumque iste. Dicta fugit labore ipsum ut iusto. Sunt minima blanditiis quia error.",
-                            }
+            <EditorJs tools={tools} i18n={i18n} data={{
+                blocks: [
+                    {
+                        type: "header",
+                        data: {
+                            text: "My Document",
+                            level: 1,
                         }
-                    ]
-                }} />
-            </div>
+                    },
+                    {
+                        type: "paragraph",
+                        data: {
+                            text: "Doloribus vitae sit eligendi. Magnam eos totam animi optio doloribus. Et impedit pariatur aut voluptatem cumque iste. Dicta fugit labore ipsum ut iusto. Sunt minima blanditiis quia error.",
+                        }
+                    }
+                ]
+            }} />
         </>
     )
 }

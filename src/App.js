@@ -51,7 +51,7 @@ const nestedRoutes = resources.map(( resource ) => {
 }).flat().concat([
   {
     path: "/document/edit",
-    component: () => <Panel title={"Content"} back={'document'}><DocumentEditPanel /></Panel>
+    component: () => <Panel back={'document'}><DocumentEditPanel /></Panel>
   }
 ])
 
